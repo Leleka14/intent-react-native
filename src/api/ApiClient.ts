@@ -1,10 +1,14 @@
 import axios from 'axios'
 
 class ApiClient {
-  apiName = ''
+  apiName = 'http://localhost:9000'
+  search = '/search'
 
-  async getCountries() {
-    return axios.get(this.apiName)
+  async getAllUniversities() {
+    return axios.get(this.apiName + '' + this.search)
+  }
+  async getUniversitiesBySearch() {
+    return axios.get(this.apiName + '' + this.search)
   }
 }
 

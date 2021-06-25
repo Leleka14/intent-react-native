@@ -14,7 +14,9 @@ const CountryCard: React.FC<IProps> = ({ item, onPress }) => {
   return (
     <View style={s.container}>
       <TouchableOpacity style={{ flex: 1 }} onPress={() => onPress(item)}>
-        <Text style={s.title}>{item.title}</Text>
+        <View style={s.icon}>{item.icon}</View>
+
+        <Text style={s.title}>{item.name}</Text>
       </TouchableOpacity>
     </View>
   )

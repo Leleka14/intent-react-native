@@ -1,5 +1,5 @@
-import * as CountriesActions from './countriesActions'
+import * as UniversitiesActions from './universitiesActions'
 const actions = {
-  ...CountriesActions,
+  ...UniversitiesActions,
 }
 export default actions

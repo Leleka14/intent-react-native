@@ -1,16 +1,16 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { countriesReducer } from './reducers/countriesReducer'
-import { watchFetchCountries } from './sagas/countriesSaga'
+import { universitiesReducer } from './reducers/universitiesReducer'
+import { watchFetchUniversities } from './sagas/universitiesSaga'
 
 const saga = createSagaMiddleware()
 export const rootReducer = combineReducers({
-  countriesReducer,
+  universitiesReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(saga)))
 
-saga.run(watchFetchCountries)
+saga.run(watchFetchUniversities)

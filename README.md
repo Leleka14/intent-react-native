@@ -11,22 +11,22 @@
 ### Requirements
 
 In this project you'll be using `University Domains API` (don't forget to run the proxy server).
-The API includes names and countries of most of the universities of the world.
+The API includes names and universities of most of the universities of the world.
 
-> http://localhost:9000/search?country=Poland
-> http://localhost:9000/search?country=Poland&name=medical
+> http://localhost:9000/search?university=Poland
+> http://localhost:9000/search?university=Poland&name=medical
 
 You'll be implementing a simple app that contains 2 screens:
 
 **Screen 1**
 
-- the initial screen should contain a list of 5 countries: Poland, Germany, France, Spain, and the United Kingdom
-- pressing the country card should open the `Screen 2` for that specific country.
+- the initial screen should contain a list of 5 universities: Poland, Germany, France, Spain, and the United Kingdom
+- pressing the university card should open the `Screen 2` for that specific university.
 
 **Screen 2**
 
-- add a name of the country in the header
-- the screen should contain a list of the country universities
+- add a name of the university in the header
+- the screen should contain a list of the university universities
 - the screen should contain a search bar (there should be a possibility to filter the list by name)
 - there should be an option to sort the list by name as well
 - please display an empty state (placeholder) if there are no results
