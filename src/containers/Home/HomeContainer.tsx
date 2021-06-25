@@ -14,9 +14,9 @@ const HomeContainer: React.FC = () => {
     { name: 'United Kingdom', icon: <UKFlag /> },
   ]
 
-  const onCountryPressed = (item: any) => {
+  const onCountryPressed = (name: string) => {
     navigation.navigate('Country', {
-      item: item,
+      name: name,
     })
   }
 

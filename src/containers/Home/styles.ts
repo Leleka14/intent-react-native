@@ -20,6 +20,6 @@ export default (insets: IProps) =>
     },
 
     list: {
-      marginTop: '15@s',
+      marginTop: '25@s',
     },
   })

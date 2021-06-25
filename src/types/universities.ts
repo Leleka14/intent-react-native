@@ -10,11 +10,19 @@ export interface IUniversitiesState {
 }
 
 export interface IUniversity {
-  title?: any
+  name: string | null
+  domains: Array<string> | null
+  web_pages: Array<string> | null
+  alpha_two_code: string | null
+  country: string | null
 }
 
 export interface FetchUniversities {
   type: UniversitiesActionTypes.FETCH_UNIVERSITIES
+  payload: {
+    country?: string
+    name?: string
+  }
 }
 
 export interface FetchUniversitiesSuccess {

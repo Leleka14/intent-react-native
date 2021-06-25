@@ -1,18 +1,23 @@
-import { UniversitiesActionTypes } from '../../types/universities'
-import { takeEvery, put, call, select, SagaReturnType } from 'redux-saga/effects'
+import { FetchUniversities, UniversitiesActionTypes } from '../../types/universities'
+import { takeEvery, put, call, SagaReturnType } from 'redux-saga/effects'
 import { fetchUniversitiesFailed, fetchUniversitiesSuccess } from '../actions/universitiesActions'
+import { DataProvider, ISearchUniversityQueryParams } from '../../api/ApiClient'
+import { RootState } from '..'
+import { finishLoading, startLoading } from '../actions/loadingsActions'
+import { LoadingsActionTypes } from '../../types/loadings'
 
-function* workerFetchUniversities() {
+function* workerFetchUniversities({ payload }: FetchUniversities) {
   try {
-    console.log('here')
-    let universities = [
-      {
-        title: 'university1',
-      },
-      {
-        title: 'university2',
-      },
-    ]
+    yield put(startLoading(LoadingsActionTypes.LOADING_UNIVERSITY))
+    const params: ISearchUniversityQueryParams = {
+      country: payload.country,
+      name: payload.name,
+    }
+
+    const response: SagaReturnType<typeof DataProvider.getUniversitiesByCountryOrSearch> =
+      yield call(() => DataProvider.getUniversitiesByCountryOrSearch(params))
+    const universities = response.data
+
     if (universities.length > 0) {
       yield put(fetchUniversitiesSuccess(universities))
     } else {
@@ -21,9 +26,14 @@ function* workerFetchUniversities() {
   } catch (e) {
     yield put(fetchUniversitiesFailed(e.message))
     console.log(e)
+  } finally {
+    yield put(finishLoading(LoadingsActionTypes.LOADING_UNIVERSITY))
   }
 }
 
 export function* watchFetchUniversities() {
   yield takeEvery(UniversitiesActionTypes.FETCH_UNIVERSITIES, workerFetchUniversities)
 }
+
+export const getUniversitiesByCountryOrSearch = ({ universitiesReducer }: RootState) =>
+  universitiesReducer.universities ? universitiesReducer.universities : null

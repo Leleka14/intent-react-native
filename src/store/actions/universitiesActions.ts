@@ -6,8 +6,12 @@ import {
   UniversitiesActionTypes,
 } from '../../types/universities'
 
-export const fetchUniversities = (): FetchUniversities => ({
+export const fetchUniversities = (country?: string, name?: string): FetchUniversities => ({
   type: UniversitiesActionTypes.FETCH_UNIVERSITIES,
+  payload: {
+    country: country,
+    name: name,
+  },
 })
 
 export const fetchUniversitiesSuccess = (

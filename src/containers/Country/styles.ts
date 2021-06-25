@@ -51,6 +51,6 @@ export default (insets: IProps) =>
       fontSize: '15@s',
     },
     list: {
-      marginTop: '15@s',
+      margin: '15@s',
     },
   })

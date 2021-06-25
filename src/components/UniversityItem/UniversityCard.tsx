@@ -8,18 +8,16 @@ interface IProps {
   onPress(item: any): void
 }
 
-const CountryCard: React.FC<IProps> = ({ item, onPress }) => {
+const UniversityCard: React.FC<IProps> = ({ item, onPress }) => {
   const s = styles
 
   return (
     <View style={s.container}>
       <TouchableOpacity style={{ flex: 1 }} onPress={() => onPress(item.name)}>
-        <View style={s.icon}>{item.icon}</View>
-
         <Text style={s.title}>{item.name}</Text>
       </TouchableOpacity>
     </View>
   )
 }
 
-export default CountryCard
+export default UniversityCard
