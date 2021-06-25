@@ -1,0 +1,7 @@
+# common
+node_modules
+babel.config.js
+jest.config.js
+metro.config.js
+.eslintrc.js
+proxy.js
