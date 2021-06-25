@@ -2,9 +2,11 @@ import React from 'react'
 import Home from './Home'
 import { useNavigation } from '@react-navigation/core'
 import { FrenchFlag, GermanFlag, PolishFlag, SpanishFlag, UKFlag } from '../../assets/icons/Icons'
+import { useActions } from '../../hooks/useActions'
 
 const HomeContainer: React.FC = () => {
   const navigation = useNavigation()
+  const { fetchUniversities } = useActions()
 
   const countries = [
     { name: 'Poland', icon: <PolishFlag /> },
@@ -15,6 +17,7 @@ const HomeContainer: React.FC = () => {
   ]
 
   const onCountryPressed = (name: string) => {
+    fetchUniversities(name)
     navigation.navigate('Country', {
       name: name,
     })

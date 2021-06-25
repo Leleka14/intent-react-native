@@ -14,7 +14,17 @@ export default (insets: IProps) =>
       backgroundColor: '#FFFFFF',
       paddingTop: insets.top,
     },
-    header: {
+    headerWrapper: {
+      paddingVertical: '20@vs',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    backIconWrapper: {
+      position: 'absolute',
+      left: '15@s',
+      justifyContent: 'center',
+    },
+    headerText: {
       fontSize: '25@s',
       textAlign: 'center',
     },
@@ -52,5 +62,9 @@ export default (insets: IProps) =>
     },
     list: {
       margin: '15@s',
+    },
+    separator: {
+      height: '1@s',
+      backgroundColor: '#828282',
     },
   })

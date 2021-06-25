@@ -4,7 +4,7 @@ export const styles = ScaledSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    margin: '5@s',
+    margin: '10@s',
   },
   icon: {
     alignItems: 'center',
@@ -12,5 +12,6 @@ export const styles = ScaledSheet.create({
   title: {
     fontSize: '15@s',
     textAlign: 'center',
+    marginTop: '15@s',
   },
 })

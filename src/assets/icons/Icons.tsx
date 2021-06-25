@@ -1,4 +1,4 @@
-import Svg, { Ellipse, G, Path } from 'react-native-svg'
+import Svg, { Circle, Ellipse, G, Path } from 'react-native-svg'
 import React from 'react'
 
 export const SearchIcon = () => {
@@ -215,6 +215,29 @@ export const GermanFlag = () => {
         fill="#ffe15a"
       />
       <Path d="M0 170.67H512V341.34H0z" fill="#ff4b55" />
+    </Svg>
+  )
+}
+
+export const ArrowBack = () => {
+  return (
+    <Svg
+      width="30"
+      height="30"
+      viewBox="0 0 487.62 487.62"
+      xmlSpace="preserve"
+      enableBackground="new 0 0 487.62 487.62"
+    >
+      <Circle cx={243.81} cy={243.81} r={243.81} fill="#eed26a" />
+      <Circle cx={243.81} cy={243.81} r={243.81} fill="#d97077" />
+      <Path
+        d="M478.911 308.624l-89.888-88.498-48.789.011-87.074-68.253-107.582 69.344-9.862 61.071 193.077 190.094c72.942-27.126 129.307-88.135 150.118-163.769z"
+        fill="#ca6168"
+      />
+      <Path
+        d="M98.053 244.956L222.413 368.263 254.59 335.58 184.584 267.215 389.746 265.618 389.389 219.754 184.206 221.352 253.16 151.884 220.477 119.706z"
+        fill="#fff"
+      />
     </Svg>
   )
 }

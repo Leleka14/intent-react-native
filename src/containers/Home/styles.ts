@@ -17,6 +17,7 @@ export default (insets: IProps) =>
     header: {
       fontSize: '25@s',
       textAlign: 'center',
+      marginVertical: '25@s',
     },
 
     list: {

@@ -1,5 +1,6 @@
 import { useNavigation, useRoute } from '@react-navigation/core'
 import React, { useEffect, useRef, useState } from 'react'
+import { Linking } from 'react-native'
 import { Transition } from 'react-native-reanimated'
 import { useActions } from '../../hooks/useActions'
 import useDebounce from '../../hooks/useDebounce'
@@ -29,16 +30,9 @@ const CountryContainer: React.FC = () => {
   const transitionIcon = <Transition.Change durationMs={200} interpolation="easeInOut" />
 
   useEffect(() => {
-    fetchUniversities(name)
-  }, [])
-
-  useEffect(() => {
     if (debouncedSearchValue !== null) {
       fetchUniversities(name, debouncedSearchValue)
     }
-    // else {
-    //   fetchUniversities()
-    // }
     setIsTyping(false)
   }, [debouncedSearchValue])
 
@@ -60,6 +54,14 @@ const CountryContainer: React.FC = () => {
   const onSearch = (text: string) => {
     setSearchValue(text)
   }
+
+  const goBack = () => {
+    if (navigation.canGoBack) navigation.goBack()
+  }
+
+  const onLinkPressed = (link: string) => {
+    Linking.openURL(link)
+  }
   return (
     <Country
       searchValue={searchValue}
@@ -71,6 +73,9 @@ const CountryContainer: React.FC = () => {
       error={error}
       universities={universities}
       isLoading={isLoading}
+      name={name}
+      goBack={goBack}
+      onLinkPressed={onLinkPressed}
     />
   )
 }
