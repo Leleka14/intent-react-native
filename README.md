@@ -2,7 +2,7 @@
 
 
 IPhone 11 Pro Max
-https://user-images.githubusercontent.com/43849847/123518944-fd77b100-d6b0-11eb-855b-2c12a05478c2.mov
+![IPhone 11 Pro Max](https://user-images.githubusercontent.com/43849847/123518944-fd77b100-d6b0-11eb-855b-2c12a05478c2.mov)
 
 
 IPhone SE(2nd Generation)
