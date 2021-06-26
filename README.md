@@ -1,5 +1,19 @@
 # Intent
 
+
+IPhone 11 Pro Max
+https://user-images.githubusercontent.com/43849847/123518944-fd77b100-d6b0-11eb-855b-2c12a05478c2.mov
+
+
+IPhone SE(2nd Generation)
+https://user-images.githubusercontent.com/43849847/123518948-05375580-d6b1-11eb-8f81-98ffa43307c4.mov
+
+
+Google Pixel XL
+https://user-images.githubusercontent.com/43849847/123520291-b42b5f80-d6b8-11eb-95e7-7f406fbf8063.mov
+
+
+
 ### Installation
 
 1. Install dependencies using `yarn`.
