@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, ActivityIndicator, TextInput, FlatList, Animated } from 'react-native'
+import { Text, View, ActivityIndicator, TextInput, FlatList } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import styles from './styles'
 import { SearchIcon, ErrorIcon, ArrowBack } from '../../assets/icons/Icons'
@@ -90,10 +90,9 @@ const Country: React.FC<IProps> = ({
           renderItem={renderItem}
           style={s.list}
           ItemSeparatorComponent={renderSeparator}
-          keyExtractor={(item, index) => `${item.name}${index}`}
+          keyExtractor={item => `${item.name} `}
         />
       )}
-      {/* {console.log(universities)} */}
     </View>
   )
 }

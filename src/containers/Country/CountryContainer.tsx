@@ -15,7 +15,6 @@ const CountryContainer: React.FC = () => {
   const { fetchUniversities } = useActions()
   const [displaySearchIcon, setDisplaySearchIcon] = useState<boolean>(true)
   const searchIconRef: any = useRef(null)
-  // const listRef: any = useRef(null)
   const debouncedSearchValue: string = useDebounce(searchValue, 800)
   const navigation = useNavigation<any>()
   const { params } = useRoute<any>()
@@ -29,16 +28,12 @@ const CountryContainer: React.FC = () => {
     }),
   )
 
-  const transitionIcon = <Transition.Change durationMs={200} interpolation="easeInOut" />
-
   useEffect(() => {
-    setSortedList(universities)
+    if (universities.length > 0) setSortedList(universities)
   }, [universities])
 
   useEffect(() => {
     if (debouncedSearchValue && searchValue) {
-      console.log(debouncedSearchValue)
-
       fetchUniversities(name, debouncedSearchValue)
     }
     setIsTyping(false)
@@ -72,9 +67,14 @@ const CountryContainer: React.FC = () => {
   }
 
   const onSortPressed = (list: Array<IUniversity>) => {
-    list.sort((a, b) => a.name.localeCompare(b.name))
-    setSortedList(list)
+    let newList = [...list]
+
+    newList.sort((a, b) => a.name.localeCompare(b.name))
+    setSortedList(newList)
   }
+
+  const transitionIcon = <Transition.Change durationMs={200} interpolation="easeInOut" />
+
   return (
     <Country
       searchValue={searchValue}

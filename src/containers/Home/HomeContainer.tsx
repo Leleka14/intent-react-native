@@ -18,7 +18,6 @@ const HomeContainer: React.FC = () => {
 
   const onCountryPressed = (name: string) => {
     fetchUniversities(name)
-    console.log('hererr')
 
     navigation.navigate('Country', {
       name: name,
