@@ -1,11 +1,12 @@
 import React from 'react'
-import { Text, View, ActivityIndicator, TextInput, FlatList } from 'react-native'
+import { Text, View, ActivityIndicator, TextInput, FlatList, Animated } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import styles from './styles'
 import { SearchIcon, ErrorIcon, ArrowBack } from '../../assets/icons/Icons'
 import { Transitioning } from 'react-native-reanimated'
 import UniversityCard from '../../components/UniversityItem/UniversityCard'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { IUniversity } from '../../types/universities'
 
 interface IProps {
   searchValue: string
@@ -20,6 +21,7 @@ interface IProps {
   name: string
   goBack(): void
   onLinkPressed(link: string): void
+  onSortPressed(list: Array<IUniversity>): void
 }
 
 const Country: React.FC<IProps> = ({
@@ -35,6 +37,7 @@ const Country: React.FC<IProps> = ({
   name,
   goBack,
   onLinkPressed,
+  onSortPressed,
 }) => {
   const insets = useSafeAreaInsets()
   const s = styles(insets)
@@ -69,6 +72,9 @@ const Country: React.FC<IProps> = ({
           placeholderTextColor={'#828282'}
         />
       </Transitioning.View>
+      <TouchableOpacity onPress={() => onSortPressed(universities)} style={s.sortButton}>
+        <Text>Sort By Name</Text>
+      </TouchableOpacity>
       {isTyping || isLoading ? (
         <View style={s.spinnerWrapper}>
           <ActivityIndicator size={'large'} color="#000" />
@@ -82,11 +88,12 @@ const Country: React.FC<IProps> = ({
         <FlatList
           data={universities}
           renderItem={renderItem}
-          keyExtractor={item => item.name}
           style={s.list}
           ItemSeparatorComponent={renderSeparator}
+          keyExtractor={(item, index) => `${item.name}${index}`}
         />
       )}
+      {/* {console.log(universities)} */}
     </View>
   )
 }

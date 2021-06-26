@@ -6,6 +6,7 @@ import { useActions } from '../../hooks/useActions'
 import useDebounce from '../../hooks/useDebounce'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 import { LoadingsActionTypes } from '../../types/loadings'
+import { IUniversity } from '../../types/universities'
 import Country from './Country'
 
 const CountryContainer: React.FC = () => {
@@ -14,11 +15,12 @@ const CountryContainer: React.FC = () => {
   const { fetchUniversities } = useActions()
   const [displaySearchIcon, setDisplaySearchIcon] = useState<boolean>(true)
   const searchIconRef: any = useRef(null)
+  // const listRef: any = useRef(null)
   const debouncedSearchValue: string = useDebounce(searchValue, 800)
   const navigation = useNavigation<any>()
   const { params } = useRoute<any>()
   const name = params.name
-
+  const [sortedList, setSortedList] = useState<Array<IUniversity>>([])
   const { universities, error, isLoading } = useTypedSelector(
     ({ universitiesReducer, loadingsReducer }) => ({
       universities: universitiesReducer?.universities ? universitiesReducer.universities : [],
@@ -30,7 +32,13 @@ const CountryContainer: React.FC = () => {
   const transitionIcon = <Transition.Change durationMs={200} interpolation="easeInOut" />
 
   useEffect(() => {
-    if (debouncedSearchValue !== null) {
+    setSortedList(universities)
+  }, [universities])
+
+  useEffect(() => {
+    if (debouncedSearchValue && searchValue) {
+      console.log(debouncedSearchValue)
+
       fetchUniversities(name, debouncedSearchValue)
     }
     setIsTyping(false)
@@ -62,6 +70,11 @@ const CountryContainer: React.FC = () => {
   const onLinkPressed = (link: string) => {
     Linking.openURL(link)
   }
+
+  const onSortPressed = (list: Array<IUniversity>) => {
+    list.sort((a, b) => a.name.localeCompare(b.name))
+    setSortedList(list)
+  }
   return (
     <Country
       searchValue={searchValue}
@@ -71,11 +84,12 @@ const CountryContainer: React.FC = () => {
       searchIconRef={searchIconRef}
       transitionIcon={transitionIcon}
       error={error}
-      universities={universities}
+      universities={sortedList}
       isLoading={isLoading}
       name={name}
       goBack={goBack}
       onLinkPressed={onLinkPressed}
+      onSortPressed={onSortPressed}
     />
   )
 }

@@ -11,7 +11,7 @@ export default (insets: IProps) =>
   ScaledSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#FFFFFF',
+      // backgroundColor: '#FFFFFF',
       paddingTop: insets.top,
     },
     headerWrapper: {
@@ -45,6 +45,10 @@ export default (insets: IProps) =>
       marginLeft: '10@s',
       width: '100%',
     },
+    sortButton: {
+      marginTop: '10@s',
+      marginHorizontal: '15@s',
+    },
     spinnerWrapper: {
       height: '50%',
       justifyContent: 'center',
@@ -66,5 +70,6 @@ export default (insets: IProps) =>
     separator: {
       height: '1@s',
       backgroundColor: '#828282',
+      marginHorizontal: '5@s',
     },
   })
