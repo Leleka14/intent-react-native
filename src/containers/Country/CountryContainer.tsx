@@ -33,8 +33,8 @@ const CountryContainer: React.FC = () => {
   }, [universities])
 
   useEffect(() => {
-    if (debouncedSearchValue && searchValue) {
-      fetchUniversities(name, debouncedSearchValue)
+    if (debouncedSearchValue || debouncedSearchValue === '') {
+      fetchUniversities(name, debouncedSearchValue.trim())
     }
     setIsTyping(false)
   }, [debouncedSearchValue])
