@@ -1,17 +1,13 @@
 # Intent
 
 
-IPhone 11 Pro Max
-https://user-images.githubusercontent.com/43849847/123518944-fd77b100-d6b0-11eb-855b-2c12a05478c2.mov
-![IPhone 11 Pro Max](https://s6.gifyu.com/images/pixel.gif)
+IPhone 11 Pro Max 
+![IPhone 11 Pro Max](https://im4.ezgif.com/tmp/ezgif-4-d659b2e647be.gif)
 
-IPhone SE(2nd Generation)
-https://user-images.githubusercontent.com/43849847/123518948-05375580-d6b1-11eb-8f81-98ffa43307c4.mov
+IPhone SE(2nd Generation) 
+![IPhone SE(2nd Generation)](https://im4.ezgif.com/tmp/ezgif-4-bdeb52066349.gif)
 
-
-Google Pixel XL
-https://user-images.githubusercontent.com/43849847/123520291-b42b5f80-d6b8-11eb-95e7-7f406fbf8063.mov
-
+![Google Pixel XL)](https://im4.ezgif.com/tmp/ezgif-4-4db9ed9e1382.gif)
 
 
 ### Installation
