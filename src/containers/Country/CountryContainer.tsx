@@ -20,6 +20,8 @@ const CountryContainer: React.FC = () => {
   const { params } = useRoute<any>()
   const name = params.name
   const [sortedList, setSortedList] = useState<Array<IUniversity>>([])
+  const [ascOrder, setAscOrder] = useState<boolean>(true)
+
   const { universities, error, isLoading } = useTypedSelector(
     ({ universitiesReducer, loadingsReducer }) => ({
       universities: universitiesReducer?.universities ? universitiesReducer.universities : [],
@@ -68,8 +70,13 @@ const CountryContainer: React.FC = () => {
 
   const onSortPressed = (list: Array<IUniversity>) => {
     let newList = [...list]
+    if (ascOrder) {
+      newList.sort((a, b) => a.name.localeCompare(b.name))
+    } else {
+      newList.sort((a, b) => b.name.localeCompare(a.name))
+    }
 
-    newList.sort((a, b) => a.name.localeCompare(b.name))
+    setAscOrder(!ascOrder)
     setSortedList(newList)
   }
 
