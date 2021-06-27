@@ -1,7 +1,7 @@
 # Intent
 
 ### Results
-![IPhone 11 Pro Max](https://im4.ezgif.com/tmp/ezgif-4-d659b2e647be.gif)![IPhone SE(2nd Generation)](https://im4.ezgif.com/tmp/ezgif-4-bdeb52066349.gif)![Google Pixel XL](https://im4.ezgif.com/tmp/ezgif-4-4db9ed9e1382.gif)
+![IPhone 11 Pro Max](https://i.postimg.cc/vmFWSXW9/ezgif-2-75b284e88f01.gif)![IPhone SE(2nd Generation)](https://i.postimg.cc/RZ08ZS8G/ezgif-2-581717ed47ba.gif)![Google Pixel XL](https://i.postimg.cc/5978MfBf/ezgif-2-d92a48e21ac4.gif)
 
 Proxy server at localhost:9000
 
