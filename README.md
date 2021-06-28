@@ -7,6 +7,8 @@ Proxy server at localhost:9000
 
 ![proxy](https://i.ibb.co/VjcJrjK/Screenshot-2021-06-26-at-20-33-16.png)
 
+## Task Description
+
 ### Installation
 
 1. Install dependencies using `yarn`.
